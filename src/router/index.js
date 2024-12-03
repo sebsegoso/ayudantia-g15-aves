@@ -14,7 +14,7 @@ const routes = [
     component: () => import("../views/AvesView.vue"),
   },
   {
-    path: "/aves/:id",
+    path: "/ave/:id",
     name: "ave-detalle",
     component: () => import("../views/AveDetalleView.vue"),
   },

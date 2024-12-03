@@ -1,10 +1,18 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/aves">Aves</router-link>
+    <router-link to="/aves">Aves <span>({{ $store.state.aves.length }})</span></router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
+
+<script>
+export default {
+  async mounted() {
+    await this.$store.dispatch("fetchTodasLasAves")
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
