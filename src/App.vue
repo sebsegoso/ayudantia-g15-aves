@@ -1,13 +1,13 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/aves">Aves <span>({{ $store.state.aves.length }})</span></router-link>
-  </nav>
+  <AppNavbar />
   <router-view />
 </template>
 
 <script>
+import AppNavbar from './components/AppNavbar.vue';
+
 export default {
+  components: { AppNavbar },
   async mounted() {
     await this.$store.dispatch("fetchTodasLasAves")
   }
@@ -21,18 +21,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
