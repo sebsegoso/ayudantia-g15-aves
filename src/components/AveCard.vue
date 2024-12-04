@@ -4,12 +4,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ ave.name.spanish }}</h5>
             <p class="card-text"><b>Nombre científico:</b> {{ ave.name.latin }}</p>
-            <router-link class="btn btn-primary" :to="{
-                name: 'ave-detalle',
-                params: {
-                    id: ave.uid
-                }
-            }">Ver detalles</router-link>
+            <router-link class="btn btn-primary" :to="`/aves/${ave.uid}`">Ver detalles</router-link>
         </div>
     </div>
 </template>
