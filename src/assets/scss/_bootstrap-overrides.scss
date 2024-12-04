@@ -1,0 +1,12 @@
+$color-primary: rgb(114, 197, 131);
+$color-secondary: rgb(54, 139, 182);
+
+$theme-colors: (
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+);
+
+$card-border-radius: 48px;
+$btn-border-radius: 20px;
+
+@import "~bootstrap/scss/bootstrap";
