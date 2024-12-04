@@ -9,6 +9,7 @@ export default createStore({
   mutations: {
     // setee todas las aves
     setAves(state, payload) {
+      console.log("no deberian venir las propiedades", payload);
       state.aves = payload;
     },
   },
@@ -17,7 +18,12 @@ export default createStore({
     async fetchTodasLasAves(context) {
       const data = await obtenerTodasLasAves();
       if (data) {
-        context.commit("setAves", data);
+        const updatedData = data.map((ave) => {
+          delete ave._links
+          delete ave.sort
+          return ave;
+        });
+        context.commit("setAves", updatedData);
       }
     },
     // una acción que traiga una ave según su id
